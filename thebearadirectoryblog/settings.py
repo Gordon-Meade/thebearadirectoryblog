@@ -29,14 +29,27 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-gordonmeade-thebearadir-jlawzpy7xgo.ws-eu110.gitpod.io', 'herokuapp.com']
+ALLOWED_HOSTS = ['.gitpod.io', 'herokuapp.com']
 
+AUTHENTICATION_BACKENDS = [
+    
+    # Needed to login by username`
+    'django.contrib.auth.backends.ModelBackend',
 
+    # `allauth` specific authentication methods, 
+    'allauth.account.auth_backends.AuthenticationBackend',
+    
+]
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'django_summernote',
+    'crispy_forms',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -44,7 +57,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'blog',
+    'about',
 ]
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,6 +77,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'thebearadirectoryblog.urls'
@@ -91,7 +115,10 @@ DATABASES = {
 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.gitpod.io",
+    "https://*.herokuapp.com"
+]
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h2>{{ post.title }}</h2>
+
+
+
+    <small>
+        {{ post.created_on.date }} | Categories:
+        {% for category in post.categories.all %}
+            <a href="{% url 'blog_category' category.name %}">
+                {{ category.name }}
+            </a>
+        {% endfor %}
+    </small>
+    <div><img src="{{ post.featured_image_url }}" alt="{{ post.title }}"></div>
+    <p>{{ post.body | linebreaks }}</p>
+{% endblock %}

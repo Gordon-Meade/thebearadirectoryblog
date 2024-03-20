@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<h1>Leaving so soon!</h1>
+
+<h3>Sorry You have to leave. Come back soon!</h3>
+    <p>Are you sure you want to log Out?</p>
+    <form action="{% url 'account_logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+
+    {% endblock %}
