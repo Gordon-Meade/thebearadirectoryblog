@@ -18,7 +18,11 @@
     <div><img src="{{ post.featured_image_url }}" alt="{{ post.title }}"></div>
     <p>{{ post.body | linebreaks }}</p>
 
-
+    {% for comment in comments %}
+    {{ comment.author }}
+    {{ comment.created_on }}
+    {{ comment.body }}
+    {& endfor %}
     <!-- Creating New Comments -->
     <div class="col-md-4 card mb-4 mt-3">
         <div class="card-body">

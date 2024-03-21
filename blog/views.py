@@ -35,11 +35,7 @@ def blog_detail(request, pk,):
             comment.author = request.user
             comment.post = post
             comment.save()
-    messages.add_message(
-        request, messages.SUCCESS,
-        'Comment submitted and awaiting approval'
-    )
-
+    
     comment_form = CommentForm()
     post.featured_image_url = post.featured_image.url
     context = {
