@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <h2>{{ post.title }}</h2>
@@ -16,4 +17,24 @@
     </small>
     <div><img src="{{ post.featured_image_url }}" alt="{{ post.title }}"></div>
     <p>{{ post.body | linebreaks }}</p>
+
+
+    <!-- Creating New Comments -->
+    <div class="col-md-4 card mb-4 mt-3">
+        <div class="card-body">
+          {% if user.is_authenticated %}
+          <h3>Leave a comment:</h3>
+          <p>Posting as: {{ user.username }}</p>
+          <form id="commentForm" method="post"
+            style="margin-top: 1.3em;">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button id="submitButton" type="submit"
+              class="btn btn-signup btn-lg">Submit</button>
+          </form>
+          {% else %}
+          <p>Log in to leave a comment</p>
+          {% endif %}
+        </div>
+      </div>
 {% endblock %}
