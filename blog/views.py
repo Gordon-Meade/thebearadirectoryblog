@@ -29,6 +29,7 @@ def blog_category(request, category):
 def blog_detail(request, pk,):
     post = Post.objects.get(pk=pk)
     comments = Comment.objects.filter(post=post)
+    print("Comments: ", comments)
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -51,7 +52,7 @@ def blog_detail(request, pk,):
 def info_view(request):
     return render(request, 'blog/blog_info.html')
 
-def comment_edit(request, slug, comment_id):
+def comment_edit(request, comment_id):
     """
     Display an individual comment for edit.
 
