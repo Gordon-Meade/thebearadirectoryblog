@@ -46,6 +46,8 @@ def blog_detail(request, pk,):
     }
     return render(request, "blog/detail.html", context)
 
+
+
 def info_view(request):
     return render(request, 'blog/blog_info.html')
 
