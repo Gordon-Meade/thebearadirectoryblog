@@ -1,39 +1,304 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<img src="" width="200" height="200" alt="TheBearaDirectory">
 
-Welcome,
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+# Welcome to TheBearaDirectory
 
-## Codeanywhere Reminders
+## A Blog Website.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+> TheBearaDirectory is a blog about the Beara Peninsula situated in the SouthWest coast of Ieland
 
-`python3 -m http.server`
+### [Link to the live site](https://the-beara-directory-blog-20bd8e403ed5.herokuapp.com/)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+#### - By Gordon Meade
 
 ---
 
-Happy coding!
+## Table of contents 
+
+ 1. [ UX ](#ux)
+ 2. [ Agile Development ](#agile-development)
+ 3. [ Features implemented ](#features-implemented)  
+ 4. [ Features Left to Implement ](#features-left-to-implement)  
+ 5. [ Technology used ](#technology-used) 
+ 6. [ Testing ](#testing)  
+ 7. [ Bugs ](#known-bugs)  
+ 8. [ Deployment](#deployment)
+ 9. [ Resources ](#resources)  
+ 10. [ Credits and acknowledgements ](#credits-and-acknowledgements)
+
+---
+
+# UX
+
+<a name="ux"></a>
+
+## Database planning 
+
+#### Data structure
+
+<img src="static/images/Screenshot 2024-03-21 194328.png" alt="Lucid diagram" width="600">
+
+- After deciding on the kind of the project and features I wanted to implement I used a lucidchart to plan the database structure.
+- The above diagram is serving as an initial guide to indicate the types and relationships between data stored.
+
+#### Data models
+
+> User
+
+-This is a Django predefined class incorporating an email & password to login
+
+
+
+---
+
+
+> Category model
+
+| Name | Field |
+| Name | CharField |
+
+---
+
+> Post model
+
+| Name | Field |
+| Title | CharField |
+| Slug | SlugField |
+| Body | TextField |
+| Featured Image | CloudinaryField |
+| Created on | DateTimeField |
+| author | ForeignKey |
+| Last Modified | DateTimeField |
+| Catergories | ManyToManyField |
+
+
+---
+
+
+> Comment model
+
+| Name | Field |
+| author | CharField |
+| Body | TextField |
+| Created on | DateTimeField |
+| post | ForeignKey |
+
+
+
+---
+## UX design
+
+
+### Overview
+
+#### Design
+
+> Initial design planning
+
+Early design stage of this project was created in Balsamic.
+
+
+<img src="static/images/Screenshot 2024-03-21 200255.png" alt="Homepage design" width="520">
+<img src="static/images/Screenshot 2024-03-21 200811.png" alt="Mobile Design" width="400">
+
+I wanted the website to be easy to use by creating a simple design.
+
+#### Site User
+
+- Someone living in the Beara area.
+- Tourists travelling to the area on holidays
+- Someone who feels a connection to the Beara Peninsula and wants to fell a paret of the commuinity
+
+#### Goals for the website
+
+- To have an informative site on all the loactions and events in Beara
+- To allow conversation through comments on specific topics 
+- To allow users to creata and delete comments they create 
+
+
+
+
+
+##### [ Back to Top ](#table-of-contents)
+
+---
+
+# Agile Development
+
+## Overview
+
+I used GitHub projects to develop my site. 
+## User Stories
+
+My User stories covered everything from installing Django to what i thought the user would like. I kept my functionality low in keeping with agile and concentrated on 
+creating a MVP that can be added to over time
+
+> List of User Stories
+
+1. https://github.com/users/Gordon-Meade/projects/2/views/1
+2. https://github.com/Gordon-Meade/thebearadirectory/issues/3
+3. https://github.com/Gordon-Meade/thebearadirectoryblog/issues/4
+4. https://github.com/Gordon-Meade/thebearadirectory/issues/2
+5. https://github.com/Gordon-Meade/thebearadirectory/issues/1
+6. https://github.com/Gordon-Meade/thebearadirectoryblog/issues/2
+7. https://github.com/Gordon-Meade/thebearadirectoryblog/issues/3
+8. https://github.com/Gordon-Meade/thebearadirectory/issues/5
+9. https://github.com/Gordon-Meade/thebearadirectory/issues/4
+
+
+
+##### [ Back to Top ](#table-of-contents)
+
+---
+
+# Features implemented
+
+
+
+
+### Navbar and Footer:
+
+- Navbar and footer are present on every page
+- Navbar's content changes depending on user authentication, allowing access to Comments
+- Footer includes Social Links
+
+### Index page:
+
+- The homepage provides the blogs created by the User
+- It can be accessed without signing in.
+
+### About Us page:
+
+- Main page includes a short information about the blog
+
+
+### Authentication and profile management:
+
+- User can sign up to the site
+- User can log in to their account
+- User can delete their posts
+- The authentication process is safe thanks to [Django-AllAuth](https://github.com/pennersr/django-allauth) and csrf tokens.
+
+### Responsiveness:
+
+- Website is responsive thanks to Bootstrap and media queries applied.
+- There's a hamburger navbar on small devices.
+
+##### [ Back to Top ](#table-of-contents)
+
+---
+
+# Features Left to Implement
+
+- Expand the site to become more interactive for the user.
+
+##### [ Back to Top ](#table-of-contents)
+
+---
+
+# Technology used 
+
+- Html - for page structure
+- CSS - for custom styling
+- Python - for the backend
+- Javascript - for timeout in messages
+- Django - framework used to build this project
+- Bootstrap 5 - 
+- Heroku PostgreSQL - used as the database
+- Font Awesome - for social media icons
+- Google Fonts- 
+- GitHub - for storing the code and for the projects Kanban
+- Heroku - for hosting and deployement of this project
+- Cloudinary - hosting the static files 
+- Git - version control tool
+
+##### [ Back to Top ](#table-of-contents)
+
+---
+
+# Testing
+
+### Responsiveness
+
+I was testing for responsiveness on an Ideapad laptop and a Samsung Galaxy A5 using the most up to date versions of Google Chrome, Mozilla Firefox and Opera versions. For more detailed testing I was using Google DevTools.
+
+> Index page:
+
+![Index page](static/images/readme-images/responsive-index.png)
+
+
+> About Us page:
+
+![Index page](static/images/readme-images/responsive-about.png)
+
+
+> Sign Up page:
+
+![Index page](static/images/readme-images/responsive-signup.png)
+
+
+> Sign In page:
+
+![Index page](static/images/readme-images/responsive-sign-in.png)
+
+
+
+### Manual testing
+
+#### Account Registration Tests
+| Test |Result  |
+|--|--|
+| User can create profile | Pass |
+| User can log into profile | Pass |
+| User can log out of profile | Pass |
+| Messages are displaying | Pass |
+| Messages are dismissable by button and timeout | Pass |
+
+
+
+---
+
+#### User Navigation Tests
+
+| Test | Result  |
+|--|--|
+| User can easily navigate to Bookings | Pass |
+| User can access About Us page| Pass|
+| User access their account page|Pass|
+| User can access the card content in About Us|Pass|
+| SuperUser can access admin page|Pass|
+
+
+
+---
+
+#### Account Authorisation Tests
+
+| Test | Result  |
+|--|--|
+| Only Superuser can access admin page |Pass|
+| Non authorised user book a table | Pass |
+| Non authorised user won't access profile page| Pass|
+
+
+
+---
+
+#### Booking and Profile Tests
+
+| Test |Result  |
+|--|--|
+|User can make a booking | Pass |
+|User can view all of their bookings | Pass |
+|User can delete their booking | Pass |
+|User can edit booking | Pass |
+|User can make more than one booking | Pass |
+|User can delete their account | Pass |
+|User can edit their information | Pass |
+|User can see the confirmation information | Pass |
+
+
+
+---
+
