@@ -1,17 +1,20 @@
 {% extends "base.html" %}
 
-{% load i18n %}
+{% load i18n static %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+<!-- Custom CSS -->
+
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
       <h3>{% trans "Sign Up" %}</h3>
 
       <p>{% blocktrans %}
-        Welcome back to TheBearaDirectory.
+        Welcome back to <span class="brand">The<span class="orange-beara">Beara</span>Directory</span>
         Do you already have an account? Then please
         <a class="link" href="{{ login_url }}">sign in</a>
         instead.
@@ -35,4 +38,9 @@
   </div>
 </div>
 
+<div class="row">
+<div class="move-banner logo-animation">
+  <span class="brand">The<span class="orange-beara">Beara</span>Directory</span>
+</div>
+</div>
 {% endblock %}
