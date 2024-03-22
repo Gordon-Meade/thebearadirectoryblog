@@ -1,0 +1,61 @@
+.brand {
+    font-family: Lato, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4A4A4F;
+}
+
+.orange-beara {
+    color: #E84610;
+}
+
+.thin {
+    font-weight: 300;
+}
+
+.carousel-container {
+    position: relative;
+  
+}
+
+.carousel {
+    z-index: 0; /* Ensure the carousel is behind the overlay */
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire container */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure the overlay is above the carousel */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.overlay-content h2 {
+    margin-bottom: 10px;
+}
+
+.overlay-logo {
+    background-color: rgb(252, 251, 251);
+    padding: 2px, 4px, 2px, 4px;
+}
+
+.btn {
+    margin-top: 20px; /* Adjust as needed */
+}

@@ -2,50 +2,48 @@
 {% load static %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/blog_info.css' %}">
 <div class="carousel-container position-relative">
   <!-- Carousel -->
   <div id="carouselExampleFade" class="carousel slide carousel-fade">
       <div class="carousel-inner">
           <div class="carousel-item active">
-              <img src="{% static 'images/_DSC6540.jpg' %}" class="d-block w-100 h-100" data-bs-ride="carousel" data-bs-interval="5000" alt="...">
-              
-          </div>
-          <div class="carousel-item">
-              <img src="{% static 'images/waterfall.jpg' %}"  class="d-block w-100 h-100" data-bs-ride="carousel" data-bs-interval="5000" alt="...">
-          </div>
-          
+              <img src="{% static 'images/waterfall.jpg' %}" class="d-block w-100 h-100" data-bs-ride="carousel" data-bs-interval="5000" alt="...">
       </div>
-      <!-- Add more carousel items here if needed -->
+      
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
       </button>
+
+
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
       </button>
-  </div>
-  <!-- Overlay content -->
-  <div class="overlay">
-      <div class="overlay-content">
-        <div class="row">
-          <div class="col-12 col-sm-6 offset-sm-3">
-            <h1 class="text-center"><span class="brand overlay-logo">The<span class="orange-beara">Beara</span>Directory</span></h1>
-            <div class="text-center"> </div>
-            <h3 class="text-center">Introducing The Beara Directory: Your Ultimate Guide to Unlocking the Magic of Beara!</h3>
-            <p class="text-center">Are you ready to embark on an adventure like no other? Say hello to The Beara Directory – your digital compass to navigating the enchanting landscapes and vibrant communities of Beara, right from the palm of your hand!</p>
-            <p class="text-center">Picture this: You're wandering through the winding streets of Beara, craving a taste of its rich culture and hidden treasures. With The Beara Directory by your side, you're not just a visitor – you're a trailblazer, uncovering every nook and cranny that makes Beara so special.</p>
-            <p class="text-center">What's in store for you? Everything! From connecting with fascinating locals to discovering bustling businesses, buzzing events, and serene locations, there's no limit to what you'll find. Whether you're a first-time explorer or a seasoned local, consider The Beara Directory your one-stop emporium for all things Beara.</p>
-            <p class="text-center">But wait, there's more! Sign up today and unlock a world of possibilities. Dive deep into the stories, minds, and hidden gems scattered across the Beara Peninsula. With us, you'll uncover not only the breathtaking vistas but also those secret spots that whisper tales of ancient lore.</p>
-            <p class="text-center">So, what are you waiting for? Join The Beara Directory community today and let the adventure begin! Prepare to be amazed, inspired, and utterly captivated by the wonders that await you in the heart of Beara.</p>
+      <div class="overlay">
+        <div class="overlay-content">
+          <div class="row">
+            <div class="col-12 col-sm-6 offset-sm-3">
+              <h1 class="text-center"><span class="brand overlay-logo">The<span class="orange-beara">Beara</span>Directory</span></h1>
+              <div class="text-center"> </div>
+              <h3 class="text-center">Introducing The Beara Directory: Your Ultimate Guide to Unlocking the Magic of Beara!</h3>
+              <p class="text-center">Are you ready to embark on an adventure like no other? Say hello to The Beara Directory – your digital compass to navigating the enchanting landscapes and vibrant communities of Beara, right from the palm of your hand!</p>
+              <p class="text-center">Picture this: You're wandering through the winding streets of Beara, craving a taste of its rich culture and hidden treasures. With The Beara Directory by your side, you're not just a visitor – you're a trailblazer, uncovering every nook and cranny that makes Beara so special.</p>
+              <p class="text-center">What's in store for you? Everything! From connecting with fascinating locals to discovering bustling businesses, buzzing events, and serene locations, there's no limit to what you'll find. Whether you're a first-time explorer or a seasoned local, consider The Beara Directory your one-stop emporium for all things Beara.</p>
+              <p class="text-center">But wait, there's more! Sign up today and unlock a world of possibilities. Dive deep into the stories, minds, and hidden gems scattered across the Beara Peninsula. With us, you'll uncover not only the breathtaking vistas but also those secret spots that whisper tales of ancient lore.</p>
+              <p class="text-center">So, what are you waiting for? Join The Beara Directory community today and let the adventure begin! Prepare to be amazed, inspired, and utterly captivated by the wonders that await you in the heart of Beara.</p>
+            </div>
           </div>
         </div>
-      </div>
-      
-          <button class="btn btn-success">Login / Sign Up</button>
-      </div>
+        
+            <button class="btn btn-success">Login / Sign Up</button>
+        </div>
+    </div>
   </div>
-</div>
-<div class="container">
+  <div class="container">
+  </div>
+  <!-- Overlay content -->
+  
   
 {% endblock %}

@@ -3,42 +3,63 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h2>{{ post.title }}</h2>
-
-
-
-    <small>
+<link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+    
+<div class="container">
+  <div class="row">
+    <div class="col-9"><h2>{{ post.title }}</h2>
+      <small>
         {{ post.created_on.date }} | Categories:
         {% for category in post.categories.all %}
             <a href="{% url 'blog_category' category.name %}">
                 {{ category.name }}
             </a>
         {% endfor %}
-    </small>
-    <div><img src="{{ post.featured_image_url }}" alt="{{ post.title }}"></div>
-    <p>{{ post.body | linebreaks }}</p>
+    </small></div>
 
-    {% for comment in comments %}
-    {{ comment.author }}
-    {{ comment.created_on }}
-    {{ comment.body }}
-    {% endfor %}
-    <!-- Creating New Comments -->
-    <div class="col-md-4 card mb-4 mt-3">
-        <div class="card-body">
-          {% if user.is_authenticated %}
-          <h3>Leave a comment:</h3>
-          <p>Posting as: {{ user.username }}</p>
-          <form id="commentForm" method="post"
-            style="margin-top: 1.3em;">
-            {{ comment_form | crispy }}
-            {% csrf_token %}
-            <button id="submitButton" type="submit"
-              class="btn btn-signup btn-lg">Submit</button>
-          </form>
-          {% else %}
-          <p>Log in to leave a comment</p>
-          {% endif %}
-        </div>
+    <div class="col-4">.<div><img src="{{ post.featured_image_url }}" alt="{{ post.title }}"></div>
+    <p></p></div>
+    <div class="col-6">{{ post.body | linebreaks }}</div>
+  </div>
+</div>
+</div>
+<div class="comment-boxes"></div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-6 col-sm-3">
+      {% for comment in comments %}
+      <p>{{ comment.author }}</p>
+      <p>{{ comment.created_on }}</p>
+      <p>{{ comment.body }}</p>
+      {% endfor %}</div>
+    <div class="col-6 col-sm-3"><div class="col-md-4 card mb-4 mt-3">
+      <div class="card-body">
+        {% if user.is_authenticated %}
+        <h3>Leave a comment:</h3>
+        <p>Posting as: {{ user.username }}</p>
+        <form id="commentForm" method="post"
+          style="margin-top: 1.3em;">
+          {{ comment_form | crispy }}
+          {% csrf_token %}
+          <button id="submitButton" type="submit"
+            class="btn btn-signup btn-lg">Submit</button>
+        </form>
+        {% else %}
+        <p>Log in to leave a comment</p>
+        {% endif %}
       </div>
+    </div></div>
+
+   
+
+
+
+
+
+    
+    
+
+   
+    <!-- Creating New Comments -->
+    
 {% endblock %}
