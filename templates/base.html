@@ -1,8 +1,8 @@
 {% load static %}
-{% load static %}
 
-{% url 'index' as blog_index_url %}
-{% url 'blog_info' as blog_info_url %}
+
+{% url 'index' as blog1_index_url %}
+{% url 'blog1_info' as blog1_info_url %}
 <!-- {% url 'about' as about_url %} -->
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
@@ -53,7 +53,7 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == blog_info_url %}active" aria-current="page{% endif %}"
+                        <a class="nav-link {% if request.path == blog1_info_url %}active" aria-current="page{% endif %}"
                             href="">Who are We?</a>
                     </li>
                     <li class="nav-item">
