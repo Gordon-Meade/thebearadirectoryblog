@@ -2,34 +2,35 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from blog.models import Post, Comment
+from .models import Post, Comment
 from .forms import CommentForm
 
-def blog_index(request):
-    posts = Post.objects.all().order_by("-created_on")
-    for post in posts:
-        # featured_image in Cloudinary
-        post.featured_image_url = post.featured_image.url 
-    context = {
+# Create your views here.
 
-        "posts": posts,
-    }
-    return render(request, "blog/index.html", context)
 
-def blog_category(request, category):
-    posts = Post.objects.filter(
-        categories__name__contains=category
-    ).order_by("-created_on")
-    context = {
-        "category": category,
-        "posts": posts,
-    }
-    return render(request, "blog/category.html", context)
+class PostList(generic.ListView):
+    queryset = Post.objects.filter(status=1)
+    template_name = "blog1/index.html"
+    paginate_by = 6
 
-def blog_detail(request, pk,):
-    post = Post.objects.get(pk=pk)
-    comments = Comment.objects.filter(post=post)
-    print("Comments: ", comments)
+
+def post_detail(request, slug):
+    """
+    Display an individual :model:`blog1.Post`.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`blog1.Post`.
+
+    **Template:**
+
+    :template:`blog1/post_detail.html`
+    """
+    queryset = Post.objects.filter(status=1)
+    post = get_object_or_404(queryset, slug=slug)
+    comments = post.comments.all().order_by("-created_on")
+    comment_count = post.comments.filter(approved=True).count()
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -37,33 +38,28 @@ def blog_detail(request, pk,):
             comment.author = request.user
             comment.post = post
             comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment submitted and awaiting approval'
+            )
     
     comment_form = CommentForm()
-    post.featured_image_url = post.featured_image.url
-    context = {
-        "post": post,
-        "comments": comments,
-        "comment_form": comment_form,
-    }
-    return render(request, "blog/detail.html", context)
+
+    return render(
+        request,
+        "blog1/post_detail.html",
+        {
+            "post": post,
+            "comments": comments,
+            "comment_count": comment_count,
+            "comment_form": comment_form
+        },
+    )
 
 
-
-def info_view(request):
-    return render(request, 'blog/blog_info.html')
-
-def comment_edit(request, comment_id):
+def comment_edit(request, slug, comment_id):
     """
-    Display an individual comment for edit.
-
-    **Context**
-
-    ``post``
-        An instance of :model:`blog.Post`.
-    ``comment``
-        A single comment related to the post.
-    ``comment_form``
-        An instance of :form:`blog.CommentForm`
+    view to edit comments
     """
     if request.method == "POST":
 
@@ -82,19 +78,12 @@ def comment_edit(request, comment_id):
             messages.add_message(request, messages.ERROR,
                                  'Error updating comment!')
 
-    return HttpResponseRedirect(reverse('detail', args=[slug]))
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
 def comment_delete(request, slug, comment_id):
     """
-    Delete an individual comment.
-
-    **Context**
-
-    ``post``
-        An instance of :model:`blog.Post`.
-    ``comment``
-        A single comment related to the post.
+    view to delete comment
     """
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
@@ -107,4 +96,4 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR,
                              'You can only delete your own comments!')
 
-    return HttpResponseRedirect(reverse('detail', args=[slug]))
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
