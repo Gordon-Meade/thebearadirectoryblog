@@ -22,7 +22,7 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #E84610;;
 }
 
 .main-bg {
@@ -43,7 +43,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #188181;
+    background-color: #E84610;;
 }
 
 .scale {
@@ -163,3 +163,4 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+

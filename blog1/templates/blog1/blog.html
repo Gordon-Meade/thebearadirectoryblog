@@ -1,7 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="static/css/banner.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/banner.css' %}">
+
 <div class="banner logo-animation"><span class="brand">The<span class="orange-beara">Beara</span>Directory</span></a></div>
 <br>
 <br>
