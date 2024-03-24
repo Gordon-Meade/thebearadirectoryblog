@@ -97,3 +97,9 @@ def comment_delete(request, slug, comment_id):
                              'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+def about(request):
+    return render(request, 'blog1/about.html')
+
+def blog(request):
+    return render(request, 'blog1/blog.html')

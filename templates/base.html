@@ -3,7 +3,7 @@
 
 {% url 'index' as blog1_index_url %}
 {% url 'blog1_info' as blog1_info_url %}
-<!-- {% url 'about' as about_url %} -->
+{% url 'about' as about_url %} 
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -45,7 +45,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href=""><span class="brand">The<span class="orange-beara">Beara</span>Directory</span></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">The<span class="orange-beara">Beara</span>Directory</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -53,12 +53,12 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == blog1_info_url %}active" aria-current="page{% endif %}"
-                            href="">Who are We?</a>
+                        <a class="nav-link {% if request.path == about_url %}active" aria-current="page{% endif %}"
+                            href="{{ about_url }}">Who are We?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == about_url %}active" aria-current="page{% endif %}"
-                            href="">Blog</a>
+                        <a class="nav-link {% if request.path == blog_url %}active" aria-current="page{% endif %}"
+                            href="{{ blog_url }}">Blog</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
