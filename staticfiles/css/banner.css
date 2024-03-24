@@ -1,0 +1,35 @@
+.move-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    margin: 0;
+    position: relative; 
+  }
+  
+.logo-animation {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    animation-name: LeftRightLeft; 
+    animation-duration: 8s; 
+    animation-iteration-count: infinite; 
+    animation-timing-function: ease-in-out; 
+}
+
+@keyframes LeftRightLeft {
+    0% {
+      left: 0;
+      transform: translateX(0%);
+    }
+    50% {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    100% {
+      left: 100%;
+      transform: translateX(20%);
+    }
+}
+
+  
