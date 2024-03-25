@@ -29,9 +29,7 @@
 
 ---
 
-# UX
 
-<a name="ux"></a>
 
 ## Database planning 
 
@@ -46,7 +44,7 @@
 
 > User
 
--This is a Django predefined class incorporating an email & password to login
+-This is a Django predefined class incorporating an username & password to login
 
 
 
@@ -66,7 +64,6 @@
 | Title | CharField |
 | Slug | SlugField |
 | Body | TextField |
-| Featured Image | CloudinaryField |
 | Created on | DateTimeField |
 | author | ForeignKey |
 | Last Modified | DateTimeField |
@@ -221,21 +218,20 @@ creating a MVP that can be added to over time
 
 ### Responsiveness
 
-I was testing for responsiveness on an Ideapad laptop and a Samsung Galaxy A5 using the most up to date versions of Google Chrome, Mozilla Firefox and Opera versions. For more detailed testing I was using Google DevTools.
+I was testing for responsiveness in Google Chrome, using devtools
 
-> Index page:
 
-![Index page](static/images/Screenshot 2024-03-25 071949.png)
+![Index page](/static/images/Screenshot-2024-03-25-071949.png)
 
 
 > About Us page:
 
-![about page](static/images/Screenshot 2024-03-25 072135.png)
+![about page](/static/images/Screenshot-2024-03-25-072135.png)
 
 
 > Sign in page:
 
-![welcome page](static/images/Screenshot 2024-03-25 072317.png)
+![welcome page](/static/images/Screenshot-2024-03-25-072317.png)
 
 
 
