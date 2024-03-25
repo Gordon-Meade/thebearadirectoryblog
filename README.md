@@ -189,6 +189,8 @@ creating a MVP that can be added to over time
 # Features Left to Implement
 
 - Expand the site to become more interactive for the user.
+- Create a new app to include Events, Clubs
+- Create a business section for companies to showcase their products
 
 ##### [ Back to Top ](#table-of-contents)
 
@@ -234,7 +236,9 @@ I was testing for responsiveness in Google Chrome, using devtools
 ![welcome page](/static/images/Screenshot-2024-03-25-072317.png)
 
 
+### Automatic Testeing
 
+|Automatic tests| passed|
 
 
 
@@ -257,10 +261,10 @@ I was testing for responsiveness in Google Chrome, using devtools
 
 | Test | Result  |
 |--|--|
-| User can easily navigate to Bookings | Pass |
-| User can access About Us page| Pass|
+| User can easily navigate through the site | Pass |
+| User can access About  page| Pass|
 | User access their account page|Pass|
-| User can access the card content in About Us|Pass|
+| User can access the card content in blog|Pass|
 | SuperUser can access admin page|Pass|
 
 
@@ -272,8 +276,8 @@ I was testing for responsiveness in Google Chrome, using devtools
 | Test | Result  |
 |--|--|
 | Only Superuser can access admin page |Pass|
-| Non authorised user book a table | Pass |
-| Non authorised user won't access profile page| Pass|
+| Non authorised user can look at blog | Pass |
+| Non authorised user cannnot comment on posts| Pass|
 
 
 
@@ -289,7 +293,20 @@ I was testing for responsiveness in Google Chrome, using devtools
 |User can read a comment | Pass |
 
 
+#### Bugs and Issues
+
+- Original design had an infinite error loop which was very hard to detect. This project had to be restarted due to this
+- The new Repo had a similar issue so a new app was created and I reset the model to the walkthrough so that now its functional
+- There was a bug in the code in relation to the edit/delete. an adjustment to the code fixed this
+- I would have liked to have my Welcome page as my home page but Django wanted the blog page so i feel the UX could be better
+- Time constrain due to start over hindered m abilit to deliver my original concept but I am happy I achieved a functional site
 
 
 ---
 
+#### Thank yous & references
+- Thank you David Calikes, Martin McInerny, Joe Melis and Tutor Support for your amazing help
+- Django Documentation
+- we3schools
+- Code Institute - I think before I blog
+- Bootstrap Documentation 
