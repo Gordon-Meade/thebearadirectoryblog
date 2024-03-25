@@ -225,22 +225,20 @@ I was testing for responsiveness on an Ideapad laptop and a Samsung Galaxy A5 us
 
 > Index page:
 
-![Index page](static/images/readme-images/responsive-index.png)
+![Index page](static/images/Screenshot 2024-03-25 071949.png)
 
 
 > About Us page:
 
-![Index page](static/images/readme-images/responsive-about.png)
+![about page](static/images/Screenshot 2024-03-25 072135.png)
 
 
-> Sign Up page:
+> Sign in page:
 
-![Index page](static/images/readme-images/responsive-signup.png)
+![welcome page](static/images/Screenshot 2024-03-25 072317.png)
 
 
-> Sign In page:
 
-![Index page](static/images/readme-images/responsive-sign-in.png)
 
 
 
@@ -285,18 +283,15 @@ I was testing for responsiveness on an Ideapad laptop and a Samsung Galaxy A5 us
 
 ---
 
-#### Booking and Profile Tests
+#### CRUD Tests
 
 | Test |Result  |
 |--|--|
-|User can make a booking | Pass |
-|User can view all of their bookings | Pass |
-|User can delete their booking | Pass |
-|User can edit booking | Pass |
-|User can make more than one booking | Pass |
-|User can delete their account | Pass |
-|User can edit their information | Pass |
-|User can see the confirmation information | Pass |
+|User can make a comment | Pass |
+|User can edit a comment | Pass |
+|User can delete a comment | Pass |
+|User can read a comment | Pass |
+
 
 
 

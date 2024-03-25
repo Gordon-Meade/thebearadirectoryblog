@@ -5,9 +5,11 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% block css %}
+<!-- <link rel="stylesheet" href="{% static 'css/signup.css' %}"> -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/banner.css' %}">
 <!-- Custom CSS -->
-
+{% endblock %}
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
@@ -43,4 +45,6 @@
   <span class="brand">The<span class="orange-beara">Beara</span>Directory</span>
 </div>
 </div>
+<br>
+<br>
 {% endblock %}

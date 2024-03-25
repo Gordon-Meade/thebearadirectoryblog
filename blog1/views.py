@@ -10,8 +10,8 @@ from .forms import CommentForm
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
-    template_name = "blog1/index.html"
-    paginate_by = 6
+    template_name = "blog1/blog.html"
+    paginate_by = 3
 
 
 def post_detail(request, slug):
@@ -101,5 +101,8 @@ def comment_delete(request, slug, comment_id):
 def about(request):
     return render(request, 'blog1/about.html')
 
+def welcome(request):
+    return render(request, 'blog1/welcome.html')
+
 def blog(request):
-    return render(request, 'blog1/blog.html')
+    return render(request, 'blog1/blog.html')    
