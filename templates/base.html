@@ -56,26 +56,26 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == welcome_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'welcome' %}">Welcome</a>
+                            href="{% url 'welcome' %}" style="color: #02264d;">Welcome</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == about_url %}active" aria-current="page{% endif %}"
-                            href="{{ about_url }}">Who are We?</a>
+                            href="{{ about_url }}" style="color: #02264d;">Who are We?</a>
                     </li>
                     
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'account_logout' %}">Logout</a>
+                            href="{% url 'account_logout' %}" style="color: #02264d;">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'account_signup' %}">Register</a>
+                            href="{% url 'account_signup' %}" style="color: #02264d;">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'account_login' %}">Login</a>
+                            href="{% url 'account_login' %}" style="color: #02264d;">Login</a>
                     </li>
                     {% endif %}
                 </ul>

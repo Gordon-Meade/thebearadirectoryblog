@@ -1,13 +1,16 @@
 body {
     background-color: #F9FAFC;
+    color: #02264d;
 }
 
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #02264d;
 }
+
+
 
 .orange-beara {
     color: #E84610;
@@ -67,7 +70,7 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #02264d;
     color: white;
     position: relative;
 }
@@ -97,7 +100,7 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #02264d;
 }
 
 .post-link:hover,
@@ -164,3 +167,8 @@ body {
     color: rgb(222, 146, 168);
 }
 
+.nav-link:hover {
+     
+    font-size: 120%;
+    font-weight: bold;
+}

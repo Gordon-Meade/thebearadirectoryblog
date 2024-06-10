@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+from decouple import config
 from pathlib import Path
 import os
 import sys
@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.gitpod.io', 'the-beara-directory-blog-20bd8e403ed5.herokuapp.com']
 
@@ -146,7 +146,20 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# settings.py
+
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
+DEFAULT_FROM_EMAIL = 'thebearadirectory@gmail.com'  # Set your default from email directly or use an environment variable
+EMAIL_HOST = "smtp.mailjet.com"  # SMTP host for Mailjet
+EMAIL_HOST_USER = os.environ.get("MAILJET_API_KEY")  # Environment variable for Mailjet API key
+EMAIL_HOST_PASSWORD = os.environ.get("MAILJET_SECRET_KEY")  # Environment variable for Mailjet secret key
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -175,4 +188,5 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
