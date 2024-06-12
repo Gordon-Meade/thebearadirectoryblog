@@ -150,13 +150,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
-DEFAULT_FROM_EMAIL = 'thebearadirectory@gmail.com'  # Set your default from email directly or use an environment variable
-EMAIL_HOST = "smtp.mailjet.com"  # SMTP host for Mailjet
-EMAIL_HOST_USER = os.environ.get("MAILJET_API_KEY")  # Environment variable for Mailjet API key
-EMAIL_HOST_PASSWORD = os.environ.get("MAILJET_SECRET_KEY")  # Environment variable for Mailjet secret key
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
+# DEFAULT_FROM_EMAIL = 'thebearadirectory@gmail.com'  # Set your default from email directly or use an environment variable
+# EMAIL_HOST = "smtp.mailjet.com"  # SMTP host for Mailjet
+# EMAIL_HOST_USER = config('MAILJET_API_KEY')
+# EMAIL_HOST_PASSWORD = config('MAILJET_SECRET_KEY')
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
 
 
 
