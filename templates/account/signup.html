@@ -12,8 +12,8 @@
 {% endblock %}
 <div class="container">
   <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <h3s tyle="color: #02264d;">{% trans "Sign Up" %}</h3>
+    <div class="col-md-8 mt-3 offset-md-2 text-center">
+      <h3 style="color: #02264d;">{% trans "Sign Up" %}</h3>
 
       <p>{% blocktrans %}
         Welcome back to <span class="brand">The<span class="orange-beara">Beara</span>Directory</span>
@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div class="col-md-8 mt-3 offset-md-2 p-5">
       <form class="signup" id="signup_form" method="post"
         action="{% url 'account_signup' %}">
         {% csrf_token %}
@@ -33,18 +33,18 @@
         <input type="hidden" name="{{ redirect_field_name }}"
           value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-signup right" type="submit">
+        <button class="btn btn-signup right text-center" type="submit">
           {% trans "Sign Up" %} &raquo;</button>
       </form>
     </div>
   </div>
 </div>
 
-<div class="row">
+<!-- <div class="row m-2">
 <div class="move-banner logo-animation">
   <span class="brand">The<span class="orange-beara">Beara</span>Directory</span>
 </div>
 </div>
 <br>
-<br>
+<br> -->
 {% endblock %}

@@ -62,6 +62,11 @@
                         <a class="nav-link {% if request.path == about_url %}active" aria-current="page{% endif %}"
                             href="{{ about_url }}" style="color: #02264d;">Who are We?</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == blog_url %}active" aria-current="page{% endif %}"
+                            href="{% url 'home' %}" style="color: #02264d;">Directory</a>
+                    </li>
                     
                     {% if user.is_authenticated %}
                     <li class="nav-item">
