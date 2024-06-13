@@ -28,23 +28,21 @@
       <form class="signup" id="signup_form" method="post"
         action="{% url 'account_signup' %}">
         {% csrf_token %}
+        <div>
         {{ form.as_p }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}"
           value="{{ redirect_field_value }}" />
+        </div>
         {% endif %}
-        <button class="btn btn-signup right text-center" type="submit">
+        <div class="text-center">
+        <button class="btn btn-signup right" type="submit">
           {% trans "Sign Up" %} &raquo;</button>
+        </div>
       </form>
     </div>
   </div>
 </div>
 
-<!-- <div class="row m-2">
-<div class="move-banner logo-animation">
-  <span class="brand">The<span class="orange-beara">Beara</span>Directory</span>
-</div>
-</div>
-<br>
-<br> -->
+
 {% endblock %}
