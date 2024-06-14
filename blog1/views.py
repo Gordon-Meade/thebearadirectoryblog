@@ -6,7 +6,9 @@ from .models import Post, Comment
 from .forms import CommentForm
 
 # Create your views here.
-
+# custom 404 view
+def custom_404(request, exception):
+    return render(request, 'blog1/404.html', status=404)
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
