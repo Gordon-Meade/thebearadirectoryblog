@@ -17,12 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 
 handler404 = 'blog1.views.custom_404'
+handler500 = 'blog1.views.custom_500'
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('summernote/', include('django_summernote.urls')),
-    path("", include("blog1.urls"), name="blog1-urls"),
+    path("", include("blog1.urls")), 
+    path('ratings/', include('ratings.urls')),
     
     
 ]

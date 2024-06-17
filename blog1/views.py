@@ -9,6 +9,9 @@ from .forms import CommentForm
 # custom 404 view
 def custom_404(request, exception):
     return render(request, 'blog1/404.html', status=404)
+# custom 500 view
+def custom_500(request):
+    return render(request, 'blog1/500.html')
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
@@ -108,3 +111,20 @@ def welcome(request):
 
 def blog(request):
     return render(request, 'blog1/blog.html')    
+
+def contactus_view(request):
+    sub = forms.ContactusForm()
+    if request.method == 'POST':
+        sub = forms.ContactusForm(request.POST)
+        if sub.is_valid():
+            email = sub.cleaned_data['Email']
+            name = sub.cleaned_data['Name']
+            message = sub.cleaned_data['Message']
+            send_mail(
+                str(name) + ' || ' + str(email),
+                message,
+                settings.EMAIL_HOST_USER,
+                [settings.EMAIL_RECEIVING_USER],
+                fail_silently=False)
+            return render(request, 'contactussuccess.html')
+    return render(request, 'contactus.html', {'form': sub})

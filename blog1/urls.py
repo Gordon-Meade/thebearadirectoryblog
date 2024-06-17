@@ -1,7 +1,7 @@
 from . import views
 from django.urls import path
 
-handler404 = 'blog1.views.custom_404'
+
 
 urlpatterns = [
     path('blog/', views.PostList.as_view(), name='home'),

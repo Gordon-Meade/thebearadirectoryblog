@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.gitpod.io', 'the-beara-directory-blog-20bd8e403ed5.herokuapp.com']
 
@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'blog1',
+    'ratings',
     
 ]
 
@@ -149,6 +150,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # settings.py
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+EMAIL_RECEIVING_USER = 'your_mail'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
 # DEFAULT_FROM_EMAIL = 'thebearadirectory@gmail.com'  # Set your default from email directly or use an environment variable

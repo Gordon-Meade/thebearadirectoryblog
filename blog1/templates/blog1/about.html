@@ -4,36 +4,22 @@
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/banner.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+
 {% endblock %}
 {% block content %}
 
-<div class="banner logo-animation"><span class="brand">The<span class="orange-beara">Beara</span>Directory</span></div>
+<div class="banner logo-animation p-2"><span class="brand">The<span class="orange-beara">Beara</span>Directory</span></div>
 <br>
 <br>
-<body>
+
     <div class="carousel-container">
         <!-- Carousel -->
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{% static 'images/waterfall.jpg' %}" class="d-block w-100" alt="Hungry Hill at sunset">
-                </div>
-                <!-- Add more carousel items here if needed -->
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        <div>
+         <img src="{% static 'images/waterfall.jpg' %}" class="d-block w-100" alt="Hungry Hill at sunset">
         </div>
-        <!-- Overlay Content -->
-        <div class="overlay">
-            <div class="overlay-content">
-                <h1 class="text-center"><span class="brand overlay-logo">The<span class="orange-beara">Beara</span>Directory</span></h1>
+                
+            <div>
+                
                 <h3 class="text-center">Introducing The Beara Directory: Your Ultimate Guide to Unlocking the Magic of Beara!</h3>
                 <p class="text-center">Are you ready to embark on an adventure like no other? Say hello to The Beara Directory – your digital compass to navigating the enchanting landscapes and vibrant communities of Beara, right from the palm of your hand!</p>
                 <p class="text-center">Picture this: You're wandering through the winding streets of Beara, craving a taste of its rich culture and hidden treasures. With The Beara Directory by your side, you're not just a visitor – you're a trailblazer, uncovering every nook and cranny that makes Beara so special.</p>
@@ -43,7 +29,8 @@
             </div>
         </div>
     </div>
-</body>
+    
+
 
 {% endblock %}
 {% block extras %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>{{ area.name }}</h1>
+    
+    <!-- Display average rating if needed -->
+    {% if ratings %}
+        <h2>Average Rating: {{ ratings|average_stars }}</h2>
+    {% endif %}
+    
+    <!-- Display individual ratings -->
+    {% for rating in ratings %}
+        <p>{{ rating.user.username }} rated {{ area.name }}: {{ rating.stars }} stars</p>
+    {% endfor %}
+
+    <!-- Form to submit rating -->
+    <form method="post" action="{% url 'rate_area' area_id=area.id %}">
+        {% csrf_token %}
+        <label for="stars">Rate {{ area.name }}:</label>
+        <select name="stars" id="stars">
+            <option value="1">1 star</option>
+            <option value="2">2 stars</option>
+            <option value="3">3 stars</option>
+            <option value="4">4 stars</option>
+            <option value="5">5 stars</option>
+        </select>
+        <button type="submit">Rate</button>
+    </form>
+
+    {% endblock %}
+
