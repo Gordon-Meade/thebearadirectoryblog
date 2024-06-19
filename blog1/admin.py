@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Post, Comment, ContactForm
+from .models import NewPost, Comment, ContactForm
 from django_summernote.admin import SummernoteModelAdmin
 
 
-@admin.register(Post)
+@admin.register(NewPost)
 class PostAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug', 'status', 'created_on')
@@ -16,3 +16,5 @@ class PostAdmin(SummernoteModelAdmin):
 # Register your models here.
 admin.site.register(Comment)
 admin.site.register(ContactForm)
+
+
