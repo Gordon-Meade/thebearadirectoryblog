@@ -301,6 +301,11 @@ I was testing for responsiveness in Google Chrome, using devtools
 - I would have liked to have my Welcome page as my home page but Django wanted the blog page so i feel the UX could be better
 - Time constrain due to start over hindered m abilit to deliver my original concept but I am happy I achieved a functional site
 
+#### Deployment
+
+- Deployed to Heroku
+- Connected Secret Keys to config vars
+- Connected Code Institute PostGres Database
 
 ---
 
