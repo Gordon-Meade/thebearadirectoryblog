@@ -3,7 +3,7 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/banner.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
 
 {% endblock %}
 {% block content %}
@@ -12,13 +12,13 @@
 <br>
 <br>
 
-    <div class="carousel-container">
-        <!-- Carousel -->
-        <div>
+    
+      <div class="container justify-center">
+        <div class="row">
+            <div class="col-12">
+        <div class="m-2">
          <img src="{% static 'images/waterfall.jpg' %}" class="d-block w-100" alt="Hungry Hill at sunset">
-        </div>
-                
-            <div>
+       
                 
                 <h3 class="text-center">Introducing The Beara Directory: Your Ultimate Guide to Unlocking the Magic of Beara!</h3>
                 <p class="text-center">Are you ready to embark on an adventure like no other? Say hello to The Beara Directory – your digital compass to navigating the enchanting landscapes and vibrant communities of Beara, right from the palm of your hand!</p>
@@ -26,14 +26,11 @@
                 <p class="text-center">What's in store for you? Everything! From connecting with fascinating locals to discovering bustling businesses, buzzing events, and serene locations, there's no limit to what you'll find. Whether you're a first-time explorer or a seasoned local, consider The Beara Directory your one-stop emporium for all things Beara.</p>
                 <p class="text-center">But wait, there's more! Sign up today and unlock a world of possibilities. Dive deep into the stories, minds, and hidden gems scattered across the Beara Peninsula. With us, you'll uncover not only the breathtaking vistas but also those secret spots that whisper tales of ancient lore.</p>
                 <p class="text-center">So, what are you waiting for? Join The Beara Directory community today and let the adventure begin! Prepare to be amazed, inspired, and utterly captivated by the wonders that await you in the heart of Beara.</p>
-            </div>
-        </div>
+            </div>     
     </div>
-    
+</div>
 
+</div>
+{% endblock %}
 
-{% endblock %}
-{% block extras %}
-<script src="{% static 'js/comments.js' %}"></script>
-{% endblock %}
 
