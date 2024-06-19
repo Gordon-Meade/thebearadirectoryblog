@@ -1,6 +1,6 @@
 from .models import Comment
 from django import forms
-
+from .models import ContactForm as ContactFormModel
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -8,7 +8,9 @@ class CommentForm(forms.ModelForm):
         fields = ('body',)
 
 
-class ContactusForm(forms.Form):
-    Name = forms.CharField(max_length=30)
-    Email = forms.EmailField()
-    Message = forms.CharField(max_length=500, widget=forms.Textarea(attrs={'rows': 3, 'cols': 30}))
+from .models import ContactForm as ContactFormModel
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = ContactFormModel
+        fields = ['name', 'email', 'message']

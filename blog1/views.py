@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm
+from .forms import ContactForm
 
 # Create your views here.
 # custom 404 view
@@ -112,19 +113,12 @@ def welcome(request):
 def blog(request):
     return render(request, 'blog1/blog.html')    
 
-def contactus_view(request):
-    sub = forms.ContactusForm()
+def contact_view(request):
     if request.method == 'POST':
-        sub = forms.ContactusForm(request.POST)
-        if sub.is_valid():
-            email = sub.cleaned_data['Email']
-            name = sub.cleaned_data['Name']
-            message = sub.cleaned_data['Message']
-            send_mail(
-                str(name) + ' || ' + str(email),
-                message,
-                settings.EMAIL_HOST_USER,
-                [settings.EMAIL_RECEIVING_USER],
-                fail_silently=False)
-            return render(request, 'contactussuccess.html')
-    return render(request, 'contactus.html', {'form': sub})
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'blog1/success.html')
+    else:
+        form = ContactForm()
+    return render(request, 'blog1/contact.html', {'form': form})
