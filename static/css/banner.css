@@ -1,9 +1,9 @@
-.move-banner {
+/* .move-banner {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow: hidden; /* Prevents horizontal scrollbar */
+  overflow: hidden; 
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -13,17 +13,17 @@
   width: 150px;
   height: 150px;
   position: absolute;
-  animation: LeftRightLeft 8s linear infinite; /* Smooth animation */
+  animation: LeftRightLeft 8s linear infinite;
 }
 
 @keyframes LeftRightLeft {
   0% {
-    transform: translateX(-150px); /* Start off screen to the left */
+    transform: translateX(-150px); 
   }
   50% {
-    transform: translateX(calc(100vw - 150px)); /* Move to the right edge of the screen */
+    transform: translateX(calc(100vw - 150px)); 
   }
   100% {
-    transform: translateX(-150px); /* Move back off screen to the left */
+    transform: translateX(-150px); 
   }
-}
+} */
