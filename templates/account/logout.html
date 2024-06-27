@@ -3,18 +3,21 @@
 {% load i18n %}
 
 {% block content %}
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
-    <div class="text-center">
-        <h2>Leaving so soon!</h2>
-        <div>
+<div class="container" style="min-height: 80vh;">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-6">
             <img src="{% static 'images/_DSC5676.jpg' %}" alt="image of mountain near the sea at sunset" class="img-fluid" style="max-width: 100%; height: auto;">
         </div>
-        <h3>Sorry You have to leave. Come back soon!</h3>
-        <p>Are you sure you want to log out?</p>
-        <form action="{% url 'account_logout' %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-primary mb-2">Logout</button>
-        </form>
+        <div class="col-md-6 text-center">
+            <h2>Leaving so soon!</h2>
+            <h3>Sorry You have to leave. Come back soon!</h3>
+            <p>Are you sure you want to log out?</p>
+            <form action="{% url 'account_logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary mb-2">Logout</button>
+            </form>
+        </div>
     </div>
 </div>
+
 {% endblock %}

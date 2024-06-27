@@ -7,9 +7,6 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body',)
 
-
-from .models import ContactForm as ContactFormModel
-
 class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactFormModel

@@ -4,10 +4,7 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/banner.css' %}">
 
-<div class="banner logo-animation"><span class="brand">The<span class="orange-beara">Beara</span>Directory</span></a></div>
-<br>
-<br>
-<br>
+
 
 <!-- index.html content starts here -->
 <div class="container-fluid">
@@ -28,7 +25,8 @@
                             <a href="{% url 'post_detail' post.slug %}" class="post-link card mb-4">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <div class="card-image">
-                                  <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}">
+                                    <img src="{{ post.image.url }}" class="img-fluid" style="width: 300px; height: 300px;" alt="{{ post.title }}">
+
                                 </div>
                                 <p class="card-text">{{ post.excerpt }}</p>
                               </a>

@@ -5,6 +5,7 @@
   height: 100vh;
   overflow: hidden; /* Prevents horizontal scrollbar */
   position: relative;
+  width: 100%;
   max-width: 100%;
 }
 
@@ -12,17 +13,17 @@
   width: 150px;
   height: 150px;
   position: absolute;
-  animation-name: LeftRightLeft;
-  animation-duration: 8s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear; /* Changed to linear for consistent speed */
+  animation: LeftRightLeft 8s linear infinite; /* Smooth animation */
 }
 
 @keyframes LeftRightLeft {
   0% {
-    left: -150px; /* Start off screen to the left */
+    transform: translateX(-150px); /* Start off screen to the left */
+  }
+  50% {
+    transform: translateX(calc(100vw - 150px)); /* Move to the right edge of the screen */
   }
   100% {
-    left: 100vw; /* Move off screen to the right */
+    transform: translateX(-150px); /* Move back off screen to the left */
   }
 }

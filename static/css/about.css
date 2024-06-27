@@ -63,6 +63,7 @@
   }
 }
 
+
 @media (max-width: 576px) {
   .carousel, .carousel-inner, .carousel-item img {
     height: 40vh;
