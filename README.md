@@ -303,6 +303,7 @@ I was testing for responsiveness in Google Chrome, using devtools
 
 #### Deployment
 
+- Repository created in Git
 - Deployed to Heroku
 - Connected Secret Keys to config vars
 - Connected Code Institute PostGres Database
@@ -310,7 +311,7 @@ I was testing for responsiveness in Google Chrome, using devtools
 ---
 
 #### Thank yous & references
-- Thank you David Calikes, Martin McInerny, Joe Melis and Tutor Support for your amazing help
+- Thank you David Calikes, Martin McInerny, Joe Melis, Spencer Barriball and Tutor Support for your amazing help
 - Django Documentation
 - we3schools
 - Code Institute - I think before I blog
