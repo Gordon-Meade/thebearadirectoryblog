@@ -51,13 +51,6 @@
 ---
 
 
-> Category model
-
-| Name | Field |
-| Name | CharField |
-
----
-
 > NewPost model
 
 | Title | CharField |
