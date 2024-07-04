@@ -8,6 +8,8 @@
 
 ## Am I Responsive?
 
+<img src="static/images/BearaDAmIResonsive.png" alt="Responsive design" width="520">
+
 [Check out how this project looks on different devices!](https://ui.dev/amiresponsive?url=https://8000-gordonmeade-thebearadir-py3u7vl0rnl.ws-eu115.gitpod.io/)
 
 > TheBearaDirectory is a blog about the Beara Peninsula situated in the SouthWest coast of Ieland
