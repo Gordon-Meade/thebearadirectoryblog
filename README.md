@@ -173,9 +173,10 @@ creating a MVP that can be added to over time
 
 # Features implemented
 
- - Contact Page
- - Comments
- - Full CRUD on Comments
+ - Contact Page to allow user to query the owner
+ - Comments aree to allow people share their opinon on the Posts Article.
+ - Full CRUD on Comments: So the User can Create, Read, Update and Delete their comments on a blog
+ - The Posts are created and maintained by the Owner of the site to allow accuarcy of information. 
 
 
 <img src="static/images/EditDeleteOption.png" alt="CRUD Delete and Edit option" width="520">
@@ -243,6 +244,7 @@ creating a MVP that can be added to over time
 - Heroku - for hosting and deployement of this project
 - Cloudinary - hosting the static files 
 - Git - version control tool
+- Smart Draw for ED Mapping of Models
 
 ##### [ Back to Top ](#table-of-contents)
 

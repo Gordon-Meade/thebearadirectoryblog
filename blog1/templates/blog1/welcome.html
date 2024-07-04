@@ -26,10 +26,15 @@
                         <span class="brand overlay-logo">The<span class="orange-beara">Beara</span>Directory</span>
                     </h2>
                     <p>Your Guide to Beara, Its People, Clubs, Business and Events</p>
-                    <div><button class="btn btn-success right mb-2" type="submit">
-                        <a class="nav-link {% if request.path == blog_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'home' %}" style="color: #e7eaec;">Directory</a></button>
+                    
+                        <a class="btn btn-success col-4 right mb-2 nav-link {% if request.path == blog_url %}active{% endif %}" 
+                           aria-current="{% if request.path == blog_url %}page{% endif %}"
+                           href="{% url 'home' %}" style="color: #e7eaec; text-decoration: none;">
+                          Directory
+                        </a>
+                        
                       </div>
+                      
                 </div>
             </div>
         </div>
