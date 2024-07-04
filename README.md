@@ -6,6 +6,10 @@
 
 ## A Blog Website.
 
+## Am I Responsive?
+
+[Check out how this project looks on different devices!](https://ui.dev/amiresponsive?url=https://8000-gordonmeade-thebearadir-py3u7vl0rnl.ws-eu115.gitpod.io/)
+
 > TheBearaDirectory is a blog about the Beara Peninsula situated in the SouthWest coast of Ieland
 
 ### [Link to the live site](https://the-beara-directory-blog-20bd8e403ed5.herokuapp.com/)
@@ -37,7 +41,7 @@
 
 <img src="static/images/SmartDrawforBearaD.png" alt="ED diagram" width="600">
 
-- After deciding on the kind of the project and features I wanted to implement I used a lucidchart to plan the database structure.
+- After deciding on the kind of the project and features I wanted to implement I used SmartDraw to plan the database structure.
 - The above diagram is serving as an initial guide to indicate the types and relationships between data stored.
 
 #### Data models

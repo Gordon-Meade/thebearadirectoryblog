@@ -24,6 +24,7 @@ class NewPost(models.Model):
     def __str__(self):
         return f"{self.title} | written by {self.author}"
 
+
 class Comment(models.Model):
     post = models.ForeignKey(NewPost, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
