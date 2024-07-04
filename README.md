@@ -6,6 +6,17 @@
 
 ## A Blog Website.
 
+<img src="static/images/image (1).png" alt="Responsive design" width="520">
+
+<img src="static/images/image (2).png" alt="Responsive design" width="520">
+
+<img src="static/images/image (3).png" alt="Responsive design" width="520">
+
+<img src="static/images/image (4).png" alt="Responsive design" width="520">
+
+
+
+
 ## Am I Responsive?
 
 <img src="static/images/BearaDAmIResonsive.png" alt="Responsive design" width="520">
@@ -165,6 +176,14 @@ creating a MVP that can be added to over time
  - Contact Page
  - Comments
  - Full CRUD on Comments
+
+
+<img src="static/images/EditDeleteOption.png" alt="CRUD Delete and Edit option" width="520">
+
+<img src="static/images/Edit.png" alt="Edit option" width="520">
+
+<img src="static/images/Delete.png" alt="Delete Option" width="520">
+
 
 
 ### Navbar and Footer:
