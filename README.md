@@ -129,6 +129,8 @@ I wanted the website to be easy to use by creating a simple design.
 ## Overview
 
 I used GitHub projects to develop my site. 
+
+<img src="static/images/BearaDProjectBoard.png" alt="Responsive design" width="520">
 ## User Stories
 
 My User stories covered everything from installing Django to what i thought the user would like. I kept my functionality low in keeping with agile and concentrated on 
