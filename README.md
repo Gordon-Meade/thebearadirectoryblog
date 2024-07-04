@@ -35,7 +35,7 @@
 
 #### Data structure
 
-<img src="static/images/Screenshot 2024-03-21 194328.png" alt="Lucid diagram" width="600">
+<img src="static/images/SmartDrawforBearaD.png" alt="ED diagram" width="600">
 
 - After deciding on the kind of the project and features I wanted to implement I used a lucidchart to plan the database structure.
 - The above diagram is serving as an initial guide to indicate the types and relationships between data stored.
@@ -58,17 +58,17 @@
 
 ---
 
-> Post model
+> NewPost model
 
-| Name | Field |
 | Title | CharField |
 | Slug | SlugField |
-| Body | TextField |
-| Created on | DateTimeField |
 | author | ForeignKey |
-| Last Modified | DateTimeField |
-| Catergories | ManyToManyField |
-
+| Content | TextField |
+| Created on | DateTimeField |
+| Status | IntegerField |
+| Excerpt | TextField |
+| Updated | DateTimeField |
+| Image | CloudinaryField |
 
 ---
 
@@ -81,7 +81,11 @@
 | Created on | DateTimeField |
 | post | ForeignKey |
 
+> Contact model
 
+| Name | Field |
+| Email | EmailField |
+| Message | TextField |
 
 ---
 ## UX design
@@ -143,6 +147,12 @@ creating a MVP that can be added to over time
 8. https://github.com/Gordon-Meade/thebearadirectory/issues/5
 9. https://github.com/Gordon-Meade/thebearadirectory/issues/4
 
+# MOSCOW Details
+
+- MO (Image of area, Full CRUD for Comments, Easy to Naviagate)
+- S  (Video of the are in topic: this would be nice but slows site)
+- CO (Ratings sectioon for each area: Needs further thought)
+- W  (API for Advertising)
 
 
 ##### [ Back to Top ](#table-of-contents)
@@ -151,7 +161,9 @@ creating a MVP that can be added to over time
 
 # Features implemented
 
-
+ - Contact Page
+ - Comments
+ - Full CRUD on Comments
 
 
 ### Navbar and Footer:
